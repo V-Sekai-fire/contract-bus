@@ -9,7 +9,7 @@ on:
 # GitHub Actions incident left a six-run backlog on one pull request.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   prek:
