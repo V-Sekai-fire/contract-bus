@@ -15,6 +15,18 @@ cmake --build build
 
 iceoryx2 is built separately and loaded at run time; nothing here vendors it.
 
+## Run
+
+The command and reply proof sends commands from one process and reads replies in the other:
+
+```sh
+export WEFT_ICEORYX2_PATH=/path/to/libiceoryx2_ffi_c.so  # .dylib on macOS, .dll on Windows
+./build/weft-harness-command_subscriber 8 &
+./build/weft-harness-command_publisher 8
+```
+
+`WEFT_ICEORYX2_PATH` names the iceoryx2 C library, and is optional where that library is on the loader's search path.
+
 ## Licence
 
 Apache-2.0; see `LICENSE`.
