@@ -69,8 +69,8 @@ add_custom_command(
 # dlopen/dlsym/dlclose over LoadLibrary/GetProcAddress and is Windows-only: on Linux/macOS
 # the real <dlfcn.h> is used and CMAKE_DL_LIBS is still how libdl gets linked.
 # Verified 2026-08-14: proof/command_{publisher,subscriber} ran for real against a
-# source-built iceoryx2 v0.9.3 on Windows 11 through exactly this path -- see README.md's
-# "The command/reply proof" section, including the C:\Temp bug this does NOT work around
+# source-built iceoryx2 v0.9.3 on Windows 11 through exactly this path -- see docs/runs.md,
+# including the C:\Temp bug this does NOT work around
 # (that one is iceoryx2's, not fixable from here; mkdir it before running anything).
 set(WEFT_HARNESS_EXTRA_SOURCES)
 if(WIN32)
